@@ -6,8 +6,8 @@ file_name = input("파일 이름을 작성해 주세요 : ")
 
 
 def make_data_file(CASE, file_name):
-    CASES = {1 : 1000, 2 : 100, 3 : 10, 4 : 1,
-             5 : 1000, 6 : 100, 7 : 10, 8 : 1}
+    CASES = {1 : 1, 2 : 10, 3 : 100, 4 : 1,
+             5 : 10, 6 : 100, 7 : 1000}
 
 
     path = os.path.dirname(os.path.abspath(__file__))
