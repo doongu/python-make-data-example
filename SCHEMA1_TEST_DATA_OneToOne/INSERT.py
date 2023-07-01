@@ -23,18 +23,20 @@ fd = open(path + '/data_files/' + data_file + '.txt', 'r')
 while True:
 
     sql = "INSERT INTO " + table + " VALUES ("
-    file_line_tuple = tuple(map(str, fd.readline().split()))
-    for i in range(len(file_line_tuple)):
-        if i != len(file_line_tuple) - 1:
+    file_line_list = list(map(str, fd.readline().split()))
+    for i in range(len(file_line_list)):
+        if i != len(file_line_list) - 1:
             sql += '%s,'
         else:
             sql += '%s)'
             
     # int 형 처리
-    for i in range(len(file_line_tuple)):
-        if str.isdigit(file_line_tuple[i]):
-            file_line_tuple[i] = int(file_line_tuple[i])
-         
+    for i in range(len(file_line_list)):
+        if str.isdigit(file_line_list[i]):
+            file_line_list[i] = int(file_line_list[i])
+    else:
+        file_line_tuple = tuple(file_line_list)
+
     mc.execute(sql, file_line_tuple)
     if not file_line_tuple:
         break
