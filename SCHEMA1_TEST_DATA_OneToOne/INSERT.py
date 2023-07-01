@@ -37,9 +37,10 @@ while True:
     else:
         file_line_tuple = tuple(file_line_list)
 
-    mc.execute(sql, file_line_tuple)
     if not file_line_tuple:
         break
+
+    mc.execute(sql, file_line_tuple)
 
 mydb.commit()
 mydb.close()
