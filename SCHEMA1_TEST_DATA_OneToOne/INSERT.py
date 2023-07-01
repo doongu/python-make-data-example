@@ -1,4 +1,4 @@
-import mysql.connector
+import pymysql
 import os 
 
 host = input("host를 입력해주세요 : ")
@@ -8,7 +8,7 @@ database = input("데이터 베이스 명을 입력해주세요 : ")
 table = input("테이블 명을 입력해주세요 : ")
 data_file = input("입력하실 파일 명을 입력해주세요 : ")
 
-mydb = mysql.connector.connect(
+mydb = pymysql.connect(
     host = host,
     user = user,
     passwd = password,
